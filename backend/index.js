@@ -6,11 +6,12 @@ import bodyParser from 'body-parser';
 import router from './routes/routes.js'
 
 const app = express();
-const PORT = 8000
+
 
 dotenv.config()
 const username = process.env.DB_USERNAME;
 const password = process.env.DB_PASSWORD;
+const PORT = process.env.PORT || 8000
 
 app.use(bodyParser.json({extended:true})) 
 app.use(bodyParser.urlencoded({extended:true}))
